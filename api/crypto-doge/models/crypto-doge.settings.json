@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "crypto_doges",
+  "info": {
+    "name": "CryptoDoge",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tribe": {
+      "model": "tribe",
+      "via": "crypto_doges"
+    },
+    "exp_earned": {
+      "type": "decimal",
+      "required": true
+    },
+    "rarity": {
+      "type": "integer",
+      "max": 6,
+      "min": 1,
+      "required": true
+    },
+    "asset": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "price": {
+      "type": "decimal",
+      "required": false
+    },
+    "owner": {
+      "via": "crypto_doges",
+      "model": "owner"
+    }
+  }
+}

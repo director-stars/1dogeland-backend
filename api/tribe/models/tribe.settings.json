@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tribes",
+  "info": {
+    "name": "Tribe"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "crypto_doges": {
+      "via": "tribe",
+      "collection": "crypto-doge"
+    }
+  }
+}

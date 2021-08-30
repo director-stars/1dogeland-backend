@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "monsters",
+  "info": {
+    "name": "Battle Monsters",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "Success_Rate": {
+      "type": "integer",
+      "max": 100
+    },
+    "HP": {
+      "type": "integer"
+    },
+    "Token_Reward": {
+      "type": "integer"
+    },
+    "Exp_Reward": {
+      "type": "integer"
+    },
+    "asset": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

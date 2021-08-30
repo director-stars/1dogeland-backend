@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/battle-bosses",
+      "handler": "battle-bosses.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/battle-bosses/count",
+      "handler": "battle-bosses.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/battle-bosses/:id",
+      "handler": "battle-bosses.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/battle-bosses",
+      "handler": "battle-bosses.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/battle-bosses/:id",
+      "handler": "battle-bosses.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/battle-bosses/:id",
+      "handler": "battle-bosses.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

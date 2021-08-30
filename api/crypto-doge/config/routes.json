@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/crypto-doges",
+      "handler": "crypto-doge.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/crypto-doges/count",
+      "handler": "crypto-doge.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/crypto-doges/:id",
+      "handler": "crypto-doge.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/crypto-doges",
+      "handler": "crypto-doge.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/crypto-doges/:id",
+      "handler": "crypto-doge.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/crypto-doges/:id",
+      "handler": "crypto-doge.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
