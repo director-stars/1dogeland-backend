@@ -2,15 +2,22 @@
   "name": "1DogeLand",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "1DogeLand",
   "scripts": {
     "develop": "strapi build && strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "lint": "eslint"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.21.0"
+  },
   "dependencies": {
+    "axios": "^0.21.1",
+    "ethers": "^5.0.31",
+    "pg": "^8.5.1",
+    "pg-connection-string": "^2.4.0",
     "strapi": "3.6.8",
     "strapi-admin": "3.6.8",
     "strapi-utils": "3.6.8",
@@ -25,7 +32,7 @@
     "sqlite3": "5.0.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "STARS"
   },
   "strapi": {
     "uuid": "9e3b455b-2d33-443a-b27f-7a7c5f2d402a"
