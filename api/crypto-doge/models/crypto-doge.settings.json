@@ -16,20 +16,6 @@
       "type": "string",
       "required": true
     },
-    "tribe": {
-      "model": "tribe",
-      "via": "crypto_doges"
-    },
-    "exp_earned": {
-      "type": "decimal",
-      "required": true
-    },
-    "rarity": {
-      "type": "integer",
-      "max": 6,
-      "min": 1,
-      "required": true
-    },
     "asset": {
       "model": "file",
       "via": "related",
@@ -40,13 +26,10 @@
       "required": true,
       "pluginOptions": {}
     },
-    "price": {
-      "type": "decimal",
-      "required": false
-    },
-    "owner": {
-      "via": "crypto_doges",
-      "model": "owner"
+    "Doge_ID": {
+      "type": "string",
+      "unique": false,
+      "required": true
     }
   }
 }

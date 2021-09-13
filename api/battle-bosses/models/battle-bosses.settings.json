@@ -46,6 +46,9 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "BossID": {
+      "type": "string"
     }
   }
 }
