@@ -16,20 +16,13 @@
       "type": "string",
       "required": true
     },
-    "asset": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": true,
-      "pluginOptions": {}
-    },
     "Doge_ID": {
       "type": "string",
       "unique": false,
       "required": true
+    },
+    "asset": {
+      "type": "string"
     }
   }
 }
