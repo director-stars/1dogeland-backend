@@ -266,9 +266,9 @@ export class Admin extends React.Component {
             />
             <NavTopRightWrapper>
               {/* Injection zone not ready yet */}
-              <DAppProvider config={{}}>
+              {/* <DAppProvider config={{}}>
                 <Wallet />
-              </DAppProvider>
+              </DAppProvider> */}
               <Logout />
             </NavTopRightWrapper>
             <div className="adminPageRightWrapper">
