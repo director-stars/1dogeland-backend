@@ -23,6 +23,9 @@
     },
     "asset": {
       "type": "string"
+    },
+    "owner": {
+      "type": "string"
     }
   }
 }
