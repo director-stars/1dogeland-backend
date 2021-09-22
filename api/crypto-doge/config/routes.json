@@ -55,6 +55,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/crypto-doges-decreaseFN/:tokenId",
+      "handler": "crypto-doge.decreaseFightNumber",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

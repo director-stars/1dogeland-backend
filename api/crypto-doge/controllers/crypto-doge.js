@@ -11,4 +11,10 @@ module.exports = {
         const doges = await strapi.services['crypto-doge'].find({owner: owner});
         return doges;
     },
+    async decreaseFightNumber(ctx) {
+        const { tokenId } = ctx.params;
+        const doge = await strapi.services['crypto-doge'].findOne({Doge_ID:tokenId});
+        console.log(doge.fightNumber);
+        await strapi.services['crypto-doge'].update({id: doge.id}, {fightNumber: doge.fightNumber - 1});
+    }
 };
