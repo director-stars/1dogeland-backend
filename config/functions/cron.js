@@ -13,9 +13,17 @@
 module.exports = {
   /**
    * Simple example.
-   * Every monday at 1am.
+   * Every 4hours.
    */
-  // '0 1 * * 1': () => {
-  //
-  // }
+  // '0 0,4,8,12,16,20 * * *': async () => {
+  '0 */4 * * *': async () => {
+    console.log('cronjob')
+    var doges = await strapi.services['crypto-doge'].find();
+    doges.forEach(doge => {
+      var fn = Math.round(Math.random()*5) + 5;
+      strapi.services['crypto-doge'].update({id: doge.id}, {
+        fightNumber: fn
+      })
+    });
+  }
 };

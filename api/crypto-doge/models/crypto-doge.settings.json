@@ -26,6 +26,9 @@
     },
     "owner": {
       "type": "string"
+    },
+    "fightNumber": {
+      "type": "integer"
     }
   }
 }
