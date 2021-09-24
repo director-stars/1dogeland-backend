@@ -26,7 +26,7 @@
     },
     {
       "method": "GET",
-      "path": "/crypto-doges/:id",
+      "path": "/crypto-doges/:tokenId",
       "handler": "crypto-doge.findOne",
       "config": {
         "policies": []
