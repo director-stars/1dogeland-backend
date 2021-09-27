@@ -63,6 +63,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/crypto-doges-findDogesByIds",
+      "handler": "crypto-doge.findDogesByIds",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

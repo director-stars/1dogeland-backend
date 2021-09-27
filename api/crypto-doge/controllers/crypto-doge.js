@@ -21,5 +21,10 @@ module.exports = {
         const { tokenId } = ctx.params;
         const doge = await strapi.services['crypto-doge'].findOne({Doge_ID:tokenId});
         return doge;
+    },
+    async findDogesByIds(ctx){
+        const { ids } = ctx.request.body;
+        const doges = await strapi.services['crypto-doge'].find({ Doge_ID: ids});
+        return doges;
     }
 };
