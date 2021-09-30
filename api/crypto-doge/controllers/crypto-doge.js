@@ -24,6 +24,8 @@ module.exports = {
     },
     async findDogesByIds(ctx){
         const { ids } = ctx.request.body;
+        console.log(ctx.request.body);
+        console.log(ids)
         const doges = await strapi.services['crypto-doge'].find({ Doge_ID: ids});
         return doges;
     }

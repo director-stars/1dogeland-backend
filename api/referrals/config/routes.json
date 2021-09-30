@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/monsters",
-      "handler": "monsters.find",
+      "path": "/referrals",
+      "handler": "referrals.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/monsters/count",
-      "handler": "monsters.count",
+      "path": "/referrals/count",
+      "handler": "referrals.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/monsters/:id",
-      "handler": "monsters.findOne",
+      "path": "/referrals/:id",
+      "handler": "referrals.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/monsters",
-      "handler": "monsters.create",
+      "path": "/referrals",
+      "handler": "referrals.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/monsters/:id",
-      "handler": "monsters.update",
+      "path": "/referrals/:id",
+      "handler": "referrals.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/monsters/:id",
-      "handler": "monsters.delete",
+      "path": "/referrals/:id",
+      "handler": "referrals.delete",
       "config": {
         "policies": []
       }

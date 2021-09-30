@@ -12,20 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
     "Doge_ID": {
       "type": "string",
       "unique": false,
       "required": true
-    },
-    "asset": {
-      "type": "string"
-    },
-    "owner": {
-      "type": "string"
     },
     "fightNumber": {
       "type": "integer"

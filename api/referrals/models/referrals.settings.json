@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "monsters",
+  "collectionName": "referrals",
   "info": {
-    "name": "Battle Monsters",
-    "description": ""
+    "name": "Referrals"
   },
   "options": {
     "increments": true,
@@ -12,14 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
+    "owner": {
+      "type": "string"
     },
-    "HP": {
-      "type": "integer"
+    "reward": {
+      "type": "biginteger"
     },
-    "asset": {
+    "friend": {
       "type": "string"
     }
   }
