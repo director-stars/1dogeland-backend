@@ -22,6 +22,9 @@
     },
     "owner": {
       "type": "string"
+    },
+    "classInfo": {
+      "type": "biginteger"
     }
   }
 }
