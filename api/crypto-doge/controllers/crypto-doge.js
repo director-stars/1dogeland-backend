@@ -31,5 +31,13 @@ module.exports = {
         console.log('tokenId', tokenId);
         console.log('owner', owner);
         await strapi.services['crypto-doge'].update({Doge_ID:tokenId}, {owner: owner});
+    },
+    async createDoge(ctx){
+        const { tokenId, owner, classInfo, fightNumber } = ctx.request.body;
+        const doge = await strapi.services['crypto-doge'].findOne({Doge_ID:tokenId});
+        if(doge)
+            await strapi.services['crypto-doge'].update({Doge_ID:tokenId, owner: owner}, {classInfo: classInfo});
+        else
+            await strapi.services['crypto-doge'].create({Doge_ID:tokenId, owner: owner, fightNumber: fightNumber, classInfo: classInfo});
     }
 };

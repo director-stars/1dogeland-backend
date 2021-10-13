@@ -79,6 +79,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/crypto-doges-create",
+      "handler": "crypto-doge.createDoge",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
