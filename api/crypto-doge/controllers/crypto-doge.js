@@ -34,6 +34,7 @@ module.exports = {
     },
     async createDoge(ctx){
         const { tokenId, owner, classInfo, fightNumber } = ctx.request.body;
+        if(fightNumber > 10) fightNumber = 11;
         const doge = await strapi.services['crypto-doge'].findOne({Doge_ID:tokenId});
         if(doge)
             await strapi.services['crypto-doge'].update({Doge_ID:tokenId, owner: owner}, {classInfo: classInfo});
