@@ -12,9 +12,14 @@ module.exports = {
         return doges;
     },
     async decreaseFightNumber(ctx) {
-        const { tokenId } = ctx.params;
-        const doge = await strapi.services['crypto-doge'].findOne({Doge_ID:tokenId});
-        await strapi.services['crypto-doge'].update({id: doge.id}, {fightNumber: doge.fightNumber - 1});
+        // const { tokenId } = ctx.params;
+        const { tokenId, owner } = ctx.request.body;
+        const temp = "_STARS_";
+        const calc_token = sha256(tokenId+temp+owner);
+        if(calc_token==token){
+            const doge = await strapi.services['crypto-doge'].findOne({Doge_ID:tokenId});
+            await strapi.services['crypto-doge'].update({id: doge.id}, {fightNumber: doge.fightNumber - 1});
+        }
     },
     async findOne(ctx) {
         const { tokenId } = ctx.params;
@@ -28,9 +33,13 @@ module.exports = {
     },
     async updateOwner(ctx){
         const { tokenId, owner } = ctx.request.body;
-        console.log('tokenId', tokenId);
-        console.log('owner', owner);
-        await strapi.services['crypto-doge'].update({Doge_ID:tokenId}, {owner: owner});
+        const temp = "*STARS*";
+        const calc_token = sha256(tokenId+temp+owner);
+        // console.log('tokenId', tokenId);
+        // console.log('owner', owner);
+        if(calc_token==token){
+            await strapi.services['crypto-doge'].update({Doge_ID:tokenId}, {owner: owner});
+        }
     },
     async createDoge(ctx){
         const { tokenId, owner, classInfo, fightNumber, token } = ctx.request.body;
