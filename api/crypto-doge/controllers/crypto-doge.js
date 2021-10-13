@@ -12,8 +12,7 @@ module.exports = {
         return doges;
     },
     async decreaseFightNumber(ctx) {
-        // const { tokenId } = ctx.params;
-        const { tokenId, owner } = ctx.request.body;
+        const { tokenId, owner, token } = ctx.request.body;
         const temp = "_STARS_";
         const calc_token = sha256(tokenId+temp+owner);
         if(calc_token==token){
