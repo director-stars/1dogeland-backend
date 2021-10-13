@@ -1,5 +1,5 @@
 'use strict';
-
+const { sha256 } = require('js-sha256');
 /**
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
  * to customize this controller
@@ -33,12 +33,15 @@ module.exports = {
         await strapi.services['crypto-doge'].update({Doge_ID:tokenId}, {owner: owner});
     },
     async createDoge(ctx){
-        const { tokenId, owner, classInfo, fightNumber } = ctx.request.body;
-        if(fightNumber > 10) fightNumber = 11;
-        const doge = await strapi.services['crypto-doge'].findOne({Doge_ID:tokenId});
-        if(doge)
-            await strapi.services['crypto-doge'].update({Doge_ID:tokenId, owner: owner}, {classInfo: classInfo});
-        else
-            await strapi.services['crypto-doge'].create({Doge_ID:tokenId, owner: owner, fightNumber: fightNumber, classInfo: classInfo});
+        const { tokenId, owner, classInfo, fightNumber, token } = ctx.request.body;
+        const temp = "-STARS-";
+        const calc_token = sha256(tokenId+temp+owner+temp+classInfo);
+        if(calc_token==token){
+            const doge = await strapi.services['crypto-doge'].findOne({Doge_ID:tokenId});
+            if(doge)
+                await strapi.services['crypto-doge'].update({Doge_ID:tokenId, owner: owner}, {classInfo: classInfo});
+            else
+                await strapi.services['crypto-doge'].create({Doge_ID:tokenId, owner: owner, fightNumber: fightNumber, classInfo: classInfo});
+        }
     }
 };
