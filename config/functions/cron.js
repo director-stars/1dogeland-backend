@@ -18,11 +18,11 @@ module.exports = {
   // '0 0,4,8,12,16,20 * * *': async () => {
   '*/5 * * * *': async () => {
     console.log('cronjob')
-    var doges = await strapi.services['crypto-doge'].find();
-    await doges.forEach(async (doge) => {
+    var doges = await strapi.services['crypto-doge'].find({_limit: -1});
+    doges.forEach(doge => {
       // var fn = Math.round(Math.random()*5) + 5;
       console.log(doge.id);
-      await strapi.services['crypto-doge'].update({id: doge.id}, {
+      strapi.services['crypto-doge'].update({id: doge.id}, {
         fightNumber: 3
       })
     });
