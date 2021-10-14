@@ -16,7 +16,7 @@ module.exports = {
    * Every 24hours.
    */
   // '0 0,4,8,12,16,20 * * *': async () => {
-  '*/5 * * * *': async () => {
+  '0 0 * * *': async () => {
     console.log('cronjob')
     var doges = await strapi.services['crypto-doge'].find({_limit: -1});
     doges.forEach(doge => {
