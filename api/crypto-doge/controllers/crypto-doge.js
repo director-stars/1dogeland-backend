@@ -6,6 +6,10 @@ const { sha256 } = require('js-sha256');
  */
 
 module.exports = {
+    async find(ctx) {
+        const doges = await strapi.services['crypto-doge'].find({_limit: -1});
+        return doges;
+    },
     async findDogesByOwner(ctx) {
         const { owner } = ctx.params;
         const doges = await strapi.services['crypto-doge'].find({owner: owner});
