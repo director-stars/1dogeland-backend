@@ -13,10 +13,10 @@
 module.exports = {
   /**
    * Simple example.
-   * Every 24hours.
+   * Every 4hours.
    */
   // '0 0,4,8,12,16,20 * * *': async () => {
-  '0 0 * * *': async () => {
+  '0 */4 * * *': async () => {
     console.log('cronjob')
     var doges = await strapi.services['crypto-doge'].find({_limit: -1});
     doges.forEach(doge => {
