@@ -38,18 +38,16 @@ module.exports = {
         const { tokenId, owner, referee, token } = ctx.request.body;
         const temp = "*STARS*";
         const calc_token = sha256(tokenId+temp+owner);
-        // console.log('tokenId', tokenId);
-        // console.log('owner', owner);
         const doges = await strapi.services['crypto-doge'].find({ owner: owner});
         const referral_status = (doges.length == 0 && referee != "0x0000000000000000000000000000000000000000")
         if(calc_token==token){
             await strapi.services['crypto-doge'].update({Doge_ID:tokenId}, {owner: owner});
         }
         doges = await strapi.services['crypto-doge'].find({ owner: owner});
-        const purchaseTime = time();
-        const referral_history = await strapi.services['referral'].findOne({buyer: owner});
+        const purchaseTime = Date.now();
+        const referral_history = await strapi.services['referral'].find({buyer: owner});
         if(referral_status && doges.length > 0 && referral_history.length == 0){
-            await strapi.services['referral'].create({referee:referee, buyer: owner, purchaseTime: purchaseTime});
+            await strapi.services['referral'].create({referee:referee, buyer: owner, purchaseTime: purchaseTime.toString()});
         }
     },
     async createDoge(ctx){
@@ -66,10 +64,10 @@ module.exports = {
                 await strapi.services['crypto-doge'].create({Doge_ID:tokenId, owner: owner, fightNumber: fightNumber, classInfo: classInfo});
         }
         doges = await strapi.services['crypto-doge'].find({ owner: owner});
-        const purchaseTime = time();
-        const referral_history = await strapi.services['referral'].findOne({buyer: owner});
+        const purchaseTime = Date.now();
+        const referral_history = await strapi.services['referral'].find({buyer: owner});
         if(referral_status && doges.length > 0 && referral_history.length == 0){
-            await strapi.services['referral'].create({referee:referee, buyer: owner, purchaseTime: purchaseTime});
+            await strapi.services['referral'].create({referee:referee, buyer: owner, purchaseTime: purchaseTime.toString()});
         }
     }
 };
