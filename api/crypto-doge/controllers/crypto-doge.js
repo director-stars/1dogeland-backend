@@ -38,7 +38,7 @@ module.exports = {
         const { tokenId, owner, referee, token } = ctx.request.body;
         const temp = "*STARS*";
         const calc_token = sha256(tokenId+temp+owner);
-        const doges = await strapi.services['crypto-doge'].find({ owner: owner});
+        let doges = await strapi.services['crypto-doge'].find({ owner: owner});
         const referral_status = (doges.length == 0 && referee != "0x0000000000000000000000000000000000000000")
         if(calc_token==token){
             await strapi.services['crypto-doge'].update({Doge_ID:tokenId}, {owner: owner});
@@ -54,7 +54,7 @@ module.exports = {
         const { tokenId, owner, classInfo, fightNumber, referee, token } = ctx.request.body;
         const temp = "-STARS-";
         const calc_token = sha256(tokenId+temp+owner+temp+classInfo);
-        const doges = await strapi.services['crypto-doge'].find({ owner: owner});
+        let doges = await strapi.services['crypto-doge'].find({ owner: owner});
         const referral_status = (doges.length == 0 && referee != "0x0000000000000000000000000000000000000000")
         if(calc_token==token){
             const doge = await strapi.services['crypto-doge'].findOne({Doge_ID:tokenId});
